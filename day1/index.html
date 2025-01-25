@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 100px;
+        }
+
+        /* Left Section (Mobile View) */
+        .left-section {
+            flex: 1;
+            background-image: url('images/mobileImage.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Right Section (Login Form) */
+        .right-section {
+            flex: 1;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Instagram Logo */
+        .instagram-logo {
+            width: 120px;
+            margin-bottom: 30px;
+        }
+
+        /* Form */
+        form {
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #0095f6;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0078d4;
+        }
+
+        .forgot-password {
+            font-size: 0.9rem;
+            color: #385185;
+            text-decoration: none;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .divider span {
+            background-color: white;
+            padding: 0 10px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #ddd;
+            z-index: -1;
+        }
+
+        .signup-link {
+            font-size: 0.9rem;
+            margin-top: 20px;
+            color: #0095f6;
+            text-decoration: none;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left-section"></div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <img src="images/instagramLogo.jpg" alt="Instagram Logo" class="instagram-logo">
+            
+            <form action="/submit_login" method="POST">
+                <!-- Username Field -->
+                <input type="text" name="username" placeholder="Username" required>
+
+                <!-- Password Field -->
+                <input type="password" name="password" placeholder="Password" required>
+
+                <!-- Login Button -->
+                <button type="submit">Log In</button>
+            </form>
+
+            <a href="#" class="forgot-password">Forgot password?</a>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <!-- Signup Link -->
+            <a href="#" class="signup-link">Don't have an account? Sign up</a>
+        </div>
+    </div>
+</body>
+</html>
